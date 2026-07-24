@@ -4,9 +4,11 @@ extends Node2D
 @export var lanes_amount = 6
 var lane_index = 0
 var position_offset: Vector2
+var target_pos
 
 func _ready():
 	position_offset = position
+	target_pos = position.x
 
 
 func _process(delta: float) -> void:
@@ -16,7 +18,9 @@ func _process(delta: float) -> void:
 		lane_index -= 1
 	lane_index = clamp(lane_index,0,lanes_amount-1)
 		
-	position.x = lane_index*lanes_distance+position_offset.x
+	target_pos = lane_index*lanes_distance+position_offset.x
+	
+	position.x = lerp(position.x,target_pos,1.0-0.01**(delta))
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
