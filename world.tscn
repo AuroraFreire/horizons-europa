@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cbfxu4pgr1ea6" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://bv5emjq27d5py" path="res://player.gd" id="2_fj7yv"]
+[ext_resource type="Script" uid="uid://bnq80bt5ckng5" path="res://enemy_spawner.gd" id="3_tlwt5"]
 
 [node name="Node2D" type="Node2D" unique_id=906349818]
 
@@ -11,3 +12,6 @@ script = ExtResource("2_fj7yv")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=754316296]
 zoom = Vector2(2.06, 2.06)
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=1894969004]
+script = ExtResource("3_tlwt5")
