@@ -16,10 +16,18 @@ gradient = SubResource("Gradient_aqk2v")
 [node name="World" type="Node2D" unique_id=906349818]
 
 [node name="UI Light" type="PointLight2D" parent="." unique_id=713588527]
-position = Vector2(6.9999924, 12.000015)
-scale = Vector2(2.9453125, 440.00003)
+position = Vector2(310, -19)
+scale = Vector2(0.75663596, 409.41565)
 energy = 1.5
 range_item_cull_mask = 2
+texture = SubResource("GradientTexture1D_036b0")
+
+[node name="SunLight" type="PointLight2D" parent="." unique_id=901353914]
+position = Vector2(-3.0000076, -124)
+rotation = 1.5707964
+scale = Vector2(0.542, -4024.02)
+energy = 0.8
+range_item_cull_mask = 4
 texture = SubResource("GradientTexture1D_036b0")
 
 [node name="Sky" type="ColorRect" parent="." unique_id=845655954]
@@ -64,9 +72,9 @@ offset_bottom = 317.0
 [node name="Bar" type="ColorRect" parent="EnergyBar" unique_id=1800226267]
 light_mask = 2
 layout_mode = 0
-offset_left = 22.999996
+offset_left = 23.0
 offset_top = 316.0
-offset_right = 45.36511
+offset_right = 45.365112
 offset_bottom = 631.0
 rotation = -3.1415927
 color = Color(0.95562464, 0.7876952, 0, 1)

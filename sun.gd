@@ -23,7 +23,11 @@ func _process(delta: float) -> void:
 	pass
 	time += 2
 	print(counter)
+<<<<<<< HEAD
 	player_texture.speed = 5.0 * (counter / 2 + 1)
+=======
+	player_texture.speed = 5.0 * (counter / 2.0 + 0.5)
+>>>>>>> a18725f22b7c5c36b0aa3320e95fad287701684c
 	if(time >= timer):
 		lane_index = randi_range(0, 5)
 		var lanepos = lane_index * player.lanes_distance - 242.0
