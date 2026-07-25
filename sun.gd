@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	pass
 	time += 2
 	print(counter)
-	player_texture.speed = 5.0 * (counter / 2 +0.5)
+	player_texture.speed = 5.0 * (counter / 2 + 1)
 	if(time >= timer):
 		lane_index = randi_range(0, 5)
 		var lanepos = lane_index * player.lanes_distance - 242.0
@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 		time = 0
 		timer = randf_range(500, 1000)
 	if(player.lane_index != sun.lane_index): 
-		counter = max(counter-delta/2.0,0.0)
+		counter = max(counter-delta/2.5,0.0)
 		if(counter <= 0):
 			print("dead")
 	elif(player.lane_index == sun.lane_index):
