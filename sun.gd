@@ -29,8 +29,7 @@ func _process(_delta: float) -> void:
 		print(timer)
 		print(time)
 	if(player.lane_index != sun.lane_index): 
-		for counter in 1000:
-			counter -= 0.001
+			counter -= _delta
 			if(counter <= 0):
 				print("dead")
 	elif(player.lane_index == sun.lane_index):
