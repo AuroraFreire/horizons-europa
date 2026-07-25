@@ -10,17 +10,21 @@ func _ready():
 	position_offset = position
 	target_pos = position.x
 
-
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("right"):
-		lane_index += 1
-	if Input.is_action_just_pressed("left"):
-		lane_index -= 1
+	var can_move = abs(position.x-target_pos) < 25
+	
+	if can_move:
+		if Input.is_action_pressed("right"):
+			lane_index += 1
+		if Input.is_action_pressed("left"):
+			lane_index -= 1
 	lane_index = clamp(lane_index,0,lanes_amount-1)
 		
 	target_pos = lane_index*lanes_distance+position_offset.x
 	
+	# smoothly lerp to new target position
 	position.x = lerp(position.x,target_pos,1.0-0.01**(delta))
+	
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cbfxu4pgr1ea6" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://bnq80bt5ckng5" path="res://enemy_spawner.gd" id="3_tlwt5"]
 
-[node name="Node2D" type="Node2D" unique_id=906349818]
+[node name="World" type="Node2D" unique_id=906349818]
 
 [node name="Player" parent="." unique_id=479148630 instance=ExtResource("1_f3sb7")]
-position = Vector2(-242, 1)
+position = Vector2(-242, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=754316296]
 zoom = Vector2(2, 2)
