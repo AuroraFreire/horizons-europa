@@ -16,3 +16,4 @@ func _process(delta: float) -> void:
 		add_child(node)
 		if lane_index % 2 == 1:
 			node.global_position.y = -node.global_position.y
+		node.start_pos = node.global_position.y
