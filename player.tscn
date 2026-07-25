@@ -17,7 +17,7 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_sh265")
 
 [node name="Texture" type="Sprite2D" parent="." unique_id=521992649]
-scale = Vector2(1.6562501, 1.6562501)
+scale = Vector2(1.65625, 1.6562501)
 texture = ExtResource("2_onrkg")
 hframes = 4
 script = ExtResource("3_i3pqv")
