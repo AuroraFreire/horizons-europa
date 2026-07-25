@@ -22,7 +22,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	time += 2
-	print(counter)
 	player_texture.speed = 5.0 * (counter / 2.0 + 0.5)
 	if(time >= timer):
 		lane_index = randi_range(0, 5)
