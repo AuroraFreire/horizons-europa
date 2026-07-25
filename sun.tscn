@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bws68b8sh12kj" path="res://sun.gd" id="1_iveel"]
 [ext_resource type="Texture2D" uid="uid://c58efh4nx8nbe" path="res://icon.svg" id="2_gtd5v"]
+[ext_resource type="Texture2D" uid="uid://dh1tiyglqmd8e" path="res://sunbeam.png" id="3_enfo0"]
 
 [node name="Sun" type="Node2D" unique_id=876680902]
 script = ExtResource("1_iveel")
@@ -10,3 +11,8 @@ script = ExtResource("1_iveel")
 position = Vector2(0, -100)
 scale = Vector2(0.2734375, 0.28125)
 texture = ExtResource("2_gtd5v")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=969829076]
+scale = Vector2(0.34253237, 1.6258065)
+color = Color(0.9028434, 0.88290036, 0.7221146, 1)
+texture = ExtResource("3_enfo0")
