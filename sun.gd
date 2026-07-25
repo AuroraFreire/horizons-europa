@@ -20,7 +20,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
 	time += 2
 	player_texture.speed = 5.0 * (counter / 2.0 + 0.5)
 	if(time >= timer):
@@ -30,7 +29,7 @@ func _process(delta: float) -> void:
 		time = 0
 		timer = randf_range(500, 1000)
 	if(player.lane_index != sun.lane_index): 
-		counter = max(counter-delta/2.0,0.0)
+		counter = max(counter-delta/2.5,0.0)
 		if(counter <= 0):
 			print("dead")
 	elif(player.lane_index == sun.lane_index):
