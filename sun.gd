@@ -9,6 +9,9 @@ var counter = 1
 var lane_index = 0
 var position_offset: Vector2
 var target_pos
+
+@onready var player_texture = player.get_node("Texture")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -20,6 +23,7 @@ func _process(delta: float) -> void:
 	pass
 	time += 2
 	print(counter)
+	player_texture.speed = 5.0 * (counter / 2 +0.5)
 	if(time >= timer):
 		lane_index = randi_range(0, 5)
 		var lanepos = lane_index * player.lanes_distance - 242.0
