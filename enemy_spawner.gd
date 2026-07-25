@@ -14,7 +14,7 @@ func regenerate_spawn_positions():
 func _process(delta: float) -> void:
 	spawn_timer -= delta
 	if spawn_timer <= 0.0:
-		spawn_timer = 0.8
+		spawn_timer = 1.5
 		var node = enemy_types[randi_range(0,len(enemy_types)-1)].instantiate()
 		if len(potential_spawn_positions) == 0:
 			regenerate_spawn_positions()

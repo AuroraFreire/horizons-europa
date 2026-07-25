@@ -11,6 +11,7 @@ size = Vector2(32, 26)
 [node name="Enemy" type="Node2D" unique_id=835823096]
 script = ExtResource("1_fha4i")
 down_texture = ExtResource("2_mju07")
+enemy_speed = 90.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=97134243]
 collision_layer = 2
