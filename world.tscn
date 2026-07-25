@@ -7,7 +7,7 @@
 
 [node name="World" type="Node2D" unique_id=906349818]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1256140640]
+[node name="Sky" type="ColorRect" parent="." unique_id=1256140640]
 offset_left = -300.0
 offset_top = -175.0
 offset_right = 325.0
