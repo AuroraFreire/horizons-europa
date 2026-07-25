@@ -14,7 +14,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=127586868]
 shape = SubResource("RectangleShape2D_sh265")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=521992649]
+[node name="Texture" type="Sprite2D" parent="." unique_id=521992649]
 scale = Vector2(0.155, 0.155)
 texture = ExtResource("1_4flbx")
 
