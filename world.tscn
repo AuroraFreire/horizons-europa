@@ -16,10 +16,18 @@ gradient = SubResource("Gradient_aqk2v")
 [node name="World" type="Node2D" unique_id=906349818]
 
 [node name="UI Light" type="PointLight2D" parent="." unique_id=713588527]
-position = Vector2(6.9999924, 12.000015)
-scale = Vector2(2.9453125, 440.00003)
+position = Vector2(310, -19)
+scale = Vector2(0.75663596, 409.41565)
 energy = 1.5
 range_item_cull_mask = 2
+texture = SubResource("GradientTexture1D_036b0")
+
+[node name="SunLight" type="PointLight2D" parent="." unique_id=901353914]
+position = Vector2(-3.0000076, -124)
+rotation = 1.5707964
+scale = Vector2(0.542, -4024.02)
+energy = 0.8
+range_item_cull_mask = 4
 texture = SubResource("GradientTexture1D_036b0")
 
 [node name="Sky" type="ColorRect" parent="." unique_id=845655954]
