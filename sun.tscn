@@ -2,13 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bws68b8sh12kj" path="res://sun.gd" id="1_iveel"]
 [ext_resource type="Texture2D" uid="uid://c58efh4nx8nbe" path="res://icon.svg" id="2_gtd5v"]
-
-[sub_resource type="Gradient" id="Gradient_gtd5v"]
-offsets = PackedFloat32Array(0, 0.21576764, 0.47302905, 0.7302905, 1)
-colors = PackedColorArray(0, 0, 0, 1, 0.91228896, 0.9122889, 0.91228884, 1, 1, 1, 1, 1, 0.92389965, 0.92389965, 0.92389965, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_enfo0"]
-gradient = SubResource("Gradient_gtd5v")
+[ext_resource type="Texture2D" uid="uid://dh1tiyglqmd8e" path="res://sunbeam.png" id="3_enfo0"]
 
 [node name="Sun" type="Node2D" unique_id=876680902]
 script = ExtResource("1_iveel")
@@ -19,6 +13,6 @@ scale = Vector2(0.2734375, 0.28125)
 texture = ExtResource("2_gtd5v")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=969829076]
-scale = Vector2(0.343, 900)
+scale = Vector2(0.27, 0.365)
 color = Color(0.9028434, 0.88290036, 0.7221146, 1)
-texture = SubResource("GradientTexture1D_enfo0")
+texture = ExtResource("3_enfo0")
