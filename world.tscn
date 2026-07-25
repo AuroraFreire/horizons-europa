@@ -29,32 +29,6 @@ offset_right = 325.0
 offset_bottom = 192.0
 color = Color(0.64705884, 0.88235295, 1, 1)
 
-[node name="EnergyBar" type="Control" parent="." unique_id=1795019983]
-light_mask = 2
-visibility_layer = 2
-layout_mode = 3
-anchors_preset = 0
-offset_left = -281.0
-offset_top = -158.0
-offset_right = -241.0
-offset_bottom = -118.0
-
-[node name="BG" type="ColorRect" parent="EnergyBar" unique_id=1631580154]
-light_mask = 2
-layout_mode = 0
-offset_right = 142.0
-offset_bottom = 14.0
-
-[node name="Bar" type="ColorRect" parent="EnergyBar" unique_id=1800226267]
-light_mask = 2
-layout_mode = 0
-offset_left = 0.6348846
-offset_top = 1.0
-offset_right = 141.0
-offset_bottom = 13.0
-color = Color(0.95562464, 0.7876952, 0, 1)
-script = ExtResource("1_036b0")
-
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1019229192]
 color = Color(0.28485027, 0.28485027, 0.28485027, 1)
 
@@ -70,3 +44,30 @@ script = ExtResource("3_tlwt5")
 enemy_types = Array[PackedScene]([ExtResource("3_aqk2v")])
 
 [node name="Sun" parent="." unique_id=876680902 instance=ExtResource("4_aqk2v")]
+
+[node name="EnergyBar" type="Control" parent="." unique_id=1795019983]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 262.0
+offset_top = -160.0
+offset_right = 302.0
+offset_bottom = -120.0
+
+[node name="BG" type="ColorRect" parent="EnergyBar" unique_id=1631580154]
+light_mask = 2
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 317.0
+
+[node name="Bar" type="ColorRect" parent="EnergyBar" unique_id=1800226267]
+light_mask = 2
+layout_mode = 0
+offset_left = 22.999996
+offset_top = 316.0
+offset_right = 45.36511
+offset_bottom = 631.0
+rotation = -3.1415927
+color = Color(0.95562464, 0.7876952, 0, 1)
+script = ExtResource("1_036b0")
