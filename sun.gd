@@ -16,21 +16,25 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	pass
 	time += 2
+	print(counter)
 	if(time >= timer):
 		lane_index = randi_range(0, 5)
 		var lanepos = lane_index * player.lanes_distance - 242.0
 		position.x = (lanepos)
 		time = 0
 		timer = randf_range(500, 1000)
-	elif (time != timer):
-		print(timer)
-		print(time)
 	if(player.lane_index != sun.lane_index): 
+<<<<<<< HEAD
 			counter -= _delta
 			if(counter <= 0):
 				print("dead")
+=======
+		counter = max(counter-delta,0.0)
+		if(counter <= 0):
+			print("dead")
+>>>>>>> 622756d3bd916cfde42b863ae5a79273e301ccaf
 	elif(player.lane_index == sun.lane_index):
-		counter += 1 
+		counter = min(counter+delta*2.0,1.0)
