@@ -24,7 +24,11 @@ func _process(delta: float) -> void:
 	
 	# smoothly lerp to new target position
 	position.x = lerp(position.x,target_pos,1.0-0.01**(delta))
-	
+	# move towards new position with fixed speed too
+	if target_pos > position.x:
+		position.x = min(position.x+delta*100,target_pos)
+	if target_pos < position.x:
+		position.x = max(position.x-delta*100,target_pos)
 
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
