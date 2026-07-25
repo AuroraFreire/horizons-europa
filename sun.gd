@@ -31,8 +31,18 @@ func _process(delta: float) -> void:
 		time = 0
 		timer = randf_range(500, 1000)
 	if(player.lane_index != sun.lane_index): 
+<<<<<<< HEAD
+<<<<<<< HEAD
+			counter -= _delta
+			if(counter <= 0):
+				print("dead")
+=======
+		counter = max(counter-delta,0.0)
+=======
 		counter = max(counter-delta/2.0,0.0)
+>>>>>>> 88feaf39aaefdbcad9a352aea0d3e672cb07978e
 		if(counter <= 0):
 			print("dead")
+>>>>>>> 622756d3bd916cfde42b863ae5a79273e301ccaf
 	elif(player.lane_index == sun.lane_index):
 		counter = min(counter+delta*2.0,1.0)
