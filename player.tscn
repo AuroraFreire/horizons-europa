@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://cbfxu4pgr1ea6"]
 
-[ext_resource type="Texture2D" uid="uid://c58efh4nx8nbe" path="res://icon.svg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://bv5emjq27d5py" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cug12eompo7xo" path="res://owl.png" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://dh4fvvxesmoxk" path="res://animated_sprite.gd" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
 
@@ -15,7 +16,10 @@ collision_mask = 2
 shape = SubResource("RectangleShape2D_sh265")
 
 [node name="Texture" type="Sprite2D" parent="." unique_id=521992649]
-scale = Vector2(0.155, 0.155)
-texture = ExtResource("1_4flbx")
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_onrkg")
+hframes = 4
+script = ExtResource("3_i3pqv")
+speed = 6
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
