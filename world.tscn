@@ -182,60 +182,62 @@ bus = &"SFX"
 
 [node name="Captcha" parent="." unique_id=416223703 instance=ExtResource("10_wse8f")]
 
-[node name="Panel" type="Panel" parent="." unique_id=1755112638]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=742074722]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1755112638]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -177.25
-offset_top = -100.75
-offset_right = 177.25
-offset_bottom = 100.75
+offset_left = -354.5
+offset_top = -201.5
+offset_right = 354.5
+offset_bottom = 201.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="back" type="Button" parent="Panel" unique_id=175992106]
+[node name="back" type="Button" parent="CanvasLayer/Panel" unique_id=175992106]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -142.5
-offset_top = -30.25
-offset_right = 142.5
-offset_bottom = 30.25
+offset_left = -285.0
+offset_top = -60.5
+offset_right = 285.0
+offset_bottom = 60.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 54
 theme_override_styles/normal = SubResource("StyleBoxFlat_ic0uy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_k3n1d")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2o6r5")
 text = "Back to Main Menu"
 
-[node name="back2" type="Button" parent="Panel" unique_id=953618022]
+[node name="back2" type="Button" parent="CanvasLayer/Panel" unique_id=953618022]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 143.0
-offset_top = -98.0
-offset_right = 164.0
-offset_bottom = -52.0
+offset_left = 286.0
+offset_top = -196.0
+offset_right = 328.0
+offset_bottom = -104.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.7411765, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0.7411765, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.74, 0, 0, 1)
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 66
 theme_override_styles/normal = SubResource("StyleBoxFlat_ic0uy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_k3n1d")
 theme_override_styles/hover = SubResource("StyleBoxFlat_2o6r5")
 text = "X"
 
-[connection signal="pressed" from="Panel/back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Panel/back2" to="." method="_on_back_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/back2" to="." method="_on_back_2_pressed"]
