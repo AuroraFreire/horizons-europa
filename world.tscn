@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://cn0c4qr3cwpxt" path="res://kacper.wav" id="7_wse8f"]
 [ext_resource type="AudioStream" uid="uid://nycblk5rt5dq" path="res://josh.wav" id="8_ic0uy"]
 [ext_resource type="AudioStream" uid="uid://cv0104fv8hrax" path="res://junya.wav" id="10_2o6r5"]
-[ext_resource type="PackedScene" uid="uid://urkv1yt1koyl" path="res://captcha.tscn" id="10_wse8f"]
+[ext_resource type="PackedScene" uid="uid://br8p5q6xh5t1g" path="res://captcha.tscn" id="10_wse8f"]
 
 [sub_resource type="Gradient" id="Gradient_aqk2v"]
 offsets = PackedFloat32Array(1)
@@ -131,5 +131,6 @@ color = Color(0, 0, 0, 1)
 
 [node name="DeathSFX" type="AudioStreamPlayer" parent="." unique_id=351282972]
 stream = SubResource("AudioStreamRandomizer_306tr")
+bus = &"SFX"
 
 [node name="Captcha" parent="." unique_id=416223703 instance=ExtResource("10_wse8f")]
