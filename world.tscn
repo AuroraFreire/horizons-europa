@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byhsd5mmq28iu" path="res://bar.gd" id="1_036b0"]
 [ext_resource type="PackedScene" uid="uid://cbfxu4pgr1ea6" path="res://player.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://m0nyhnb1piwp" path="res://world.gd" id="1_ic0uy"]
 [ext_resource type="PackedScene" uid="uid://g8rnhvtwqv1o" path="res://small_bird.tscn" id="3_aqk2v"]
 [ext_resource type="Script" uid="uid://bnq80bt5ckng5" path="res://enemy_spawner.gd" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://b5ov2aybr1o5m" path="res://sun.tscn" id="4_aqk2v"]
@@ -37,7 +38,32 @@ stream_2/weight = 15.0
 stream_3/stream = ExtResource("10_2o6r5")
 stream_3/weight = 3.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ic0uy"]
+bg_color = Color(0.64, 0.224, 0.224, 0)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 1
+shadow_offset = Vector2(3, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3n1d"]
+bg_color = Color(0.43, 0.1333, 0.13824493, 0)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 1
+shadow_offset = Vector2(3, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2o6r5"]
+bg_color = Color(0.43, 0.1333, 0.13824493, 0)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 1
+shadow_offset = Vector2(3, 6)
+
 [node name="World" type="Node2D" unique_id=906349818]
+script = ExtResource("1_ic0uy")
 
 [node name="UI Light" type="PointLight2D" parent="." unique_id=713588527]
 position = Vector2(310, -19)
@@ -134,3 +160,61 @@ stream = SubResource("AudioStreamRandomizer_306tr")
 bus = &"SFX"
 
 [node name="Captcha" parent="." unique_id=416223703 instance=ExtResource("10_wse8f")]
+
+[node name="Panel" type="Panel" parent="." unique_id=1755112638]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.25
+offset_top = -100.75
+offset_right = 177.25
+offset_bottom = 100.75
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="back" type="Button" parent="Panel" unique_id=175992106]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -142.5
+offset_top = -30.25
+offset_right = 142.5
+offset_bottom = 30.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_ic0uy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k3n1d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2o6r5")
+text = "Back to Main Menu"
+
+[node name="back2" type="Button" parent="Panel" unique_id=953618022]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 143.0
+offset_top = -98.0
+offset_right = 164.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.7411765, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.7411765, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.74, 0, 0, 1)
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_ic0uy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k3n1d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2o6r5")
+text = "X"
+
+[connection signal="pressed" from="Panel/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/back2" to="." method="_on_back_2_pressed"]
