@@ -7,21 +7,43 @@ var position_offset: Vector2
 var target_pos
 var restart := false
 @onready var sun = get_node("../Sun")
-@onready var death_screen = get_node("../Death")
-@onready var death_overlay = get_node("../DeathOverlay")
+@onready var death_screen = get_node("../HUD Layer/Death")
+@onready var death_overlay = get_node("../HUD Layer/DeathOverlay")
 @onready var death_sound = get_node("../DeathSFX")
+@onready var score_label: Label = get_node("../HUD Layer/ScoreLabel")
+@onready var highscore_label: Label = get_node("../HUD Layer/HighScore")
 @onready var captcha = get_node("../Captcha")
 
 var died = false
 var die_counter = 0.0
 
+var save: ConfigFile
+var score = 0.0
+
 func _ready():
 	position_offset = position
 	target_pos = position.x
+	
+	save = ConfigFile.new()
+	var err = save.load("user://save.txt")
+	if err:
+		save.set_value("save","highscore",0.0)
+		print("new")
+	highscore_label.text = "Hs: " + str(int(save.get_value("save","highscore")*5.0))
 
 func die():
 	if died:
 		return
+		
+	print(score)
+	var old = save.get_value("save","highscore")
+	if score > old:
+		save.set_value("save","highscore",score)
+		save.save("user://save.txt")
+		print("new high")
+		highscore_label.text = "Hs: " + str(int(score*5.0))
+	score = 0
+	
 	died = true
 	death_sound.play()
 
@@ -36,12 +58,14 @@ func _process(delta: float) -> void:
 			death_screen.modulate.a = die_counter / 0.3
 		elif die_counter <= 0.3+1.0:
 			death_overlay.modulate.a = (die_counter-0.3)/1.0
-			print(death_overlay.modulate.a)
 		else:
 			if not restart:
 				restart = true
 			await get_tree().create_timer(0.9).timeout
 			get_tree().change_scene_to_file("res://world.tscn")
+	else:
+		score += delta
+		score_label.text = str(int(score*5.0))
 	
 	var prev_lane = lane_index
 	if can_move:
@@ -67,5 +91,4 @@ func _process(delta: float) -> void:
 		position.x = max(position.x-delta*const_speed,target_pos)
 
 func _on_area_2d_area_entered(_area: Area2D) -> void:
-	print("die")
 	die()

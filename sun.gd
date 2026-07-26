@@ -30,6 +30,6 @@ func _process(delta: float) -> void:
 	if(player.lane_index != sun.lane_index): 
 		counter = max(counter-delta/2.5,0.0)
 		if(counter <= 0):
-			print("dead")
+			pass
 	elif(player.lane_index == sun.lane_index):
 		counter = min(counter+delta*2.0,1.0)

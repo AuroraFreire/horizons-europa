@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://byhsd5mmq28iu" path="res://bar.gd" id="1_036b0"]
 [ext_resource type="PackedScene" uid="uid://cbfxu4pgr1ea6" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://m0nyhnb1piwp" path="res://world.gd" id="1_ic0uy"]
+[ext_resource type="FontFile" uid="uid://bommj3adrys8u" path="res://Naluka.ttf" id="2_k3n1d"]
 [ext_resource type="PackedScene" uid="uid://g8rnhvtwqv1o" path="res://small_bird.tscn" id="3_aqk2v"]
 [ext_resource type="Script" uid="uid://bnq80bt5ckng5" path="res://enemy_spawner.gd" id="3_tlwt5"]
 [ext_resource type="PackedScene" uid="uid://b5ov2aybr1o5m" path="res://sun.tscn" id="4_aqk2v"]
@@ -11,6 +12,16 @@
 [ext_resource type="AudioStream" uid="uid://nycblk5rt5dq" path="res://josh.wav" id="8_ic0uy"]
 [ext_resource type="AudioStream" uid="uid://cv0104fv8hrax" path="res://junya.wav" id="10_2o6r5"]
 [ext_resource type="PackedScene" uid="uid://br8p5q6xh5t1g" path="res://captcha.tscn" id="10_wse8f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2o6r5"]
+font = ExtResource("2_k3n1d")
+font_size = 26
+font_color = Color(0.80545735, 0.4867561, 7.70092e-07, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_k3n1d"]
+font = ExtResource("2_k3n1d")
+font_size = 12
+font_color = Color(0.80545735, 0.4867561, 7.70092e-07, 1)
 
 [sub_resource type="Gradient" id="Gradient_aqk2v"]
 offsets = PackedFloat32Array(1)
@@ -65,23 +76,77 @@ shadow_offset = Vector2(3, 6)
 [node name="World" type="Node2D" unique_id=906349818]
 script = ExtResource("1_ic0uy")
 
-[node name="UI Light" type="PointLight2D" parent="." unique_id=713588527]
-position = Vector2(310, -19)
-scale = Vector2(0.75663596, 409.41565)
-energy = 1.5
-range_item_cull_mask = 2
-texture = SubResource("GradientTexture1D_036b0")
+[node name="HUD Layer" type="CanvasLayer" parent="." unique_id=1588094315]
+
+[node name="ScoreLabel" type="Label" parent="HUD Layer" unique_id=1752077986]
+offset_left = 928.0
+offset_top = 4.0
+offset_right = 1011.0
+offset_bottom = 42.0
+scale = Vector2(2, 2)
+text = "0"
+label_settings = SubResource("LabelSettings_2o6r5")
+horizontal_alignment = 2
+
+[node name="HighScore" type="Label" parent="HUD Layer" unique_id=442678640]
+offset_left = 928.0
+offset_top = 63.0
+offset_right = 1011.0
+offset_bottom = 101.0
+scale = Vector2(2, 2)
+text = "Hs: 0"
+label_settings = SubResource("LabelSettings_k3n1d")
+horizontal_alignment = 2
+
+[node name="EnergyBar" type="Control" parent="HUD Layer" unique_id=1795019983]
+light_mask = 2
+visibility_layer = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1103.0
+offset_top = 1.0
+offset_right = 1143.0
+offset_bottom = 41.0
+scale = Vector2(2, 2)
+
+[node name="BG" type="ColorRect" parent="HUD Layer/EnergyBar" unique_id=1631580154]
+light_mask = 2
+layout_mode = 0
+offset_right = 24.0
+offset_bottom = 317.0
+
+[node name="Bar" type="ColorRect" parent="HUD Layer/EnergyBar" unique_id=1800226267]
+light_mask = 2
+layout_mode = 0
+offset_left = 23.0
+offset_top = 316.0
+offset_right = 45.365112
+offset_bottom = 631.0
+rotation = -3.1415927
+color = Color(0.95562464, 0.7876952, 0, 1)
+script = ExtResource("1_036b0")
+
+[node name="Death" type="TextureRect" parent="HUD Layer" unique_id=142952948]
+modulate = Color(1, 1, 1, 0)
+light_mask = 4
+offset_left = -26.0
+offset_top = 234.0
+offset_right = 584.0
+offset_bottom = 320.0
+scale = Vector2(2, 2)
+texture = ExtResource("6_dwbse")
+
+[node name="DeathOverlay" type="ColorRect" parent="HUD Layer" unique_id=837360246]
+modulate = Color(1, 1, 1, 0)
+offset_left = -48.0
+offset_top = -31.0
+offset_right = 577.0
+offset_bottom = 336.0
+scale = Vector2(2, 2)
+color = Color(0, 0, 0, 1)
 
 [node name="SunLight" type="PointLight2D" parent="." unique_id=901353914]
 position = Vector2(-3.0000076, -124)
-rotation = 1.5707964
-scale = Vector2(0.542, -4024.02)
-energy = 0.8
-range_item_cull_mask = 4
-texture = SubResource("GradientTexture1D_036b0")
-
-[node name="UI Light 2" type="PointLight2D" parent="." unique_id=1100730954]
-position = Vector2(0, -1.5258789e-05)
 rotation = 1.5707964
 scale = Vector2(0.542, -4024.02)
 energy = 0.8
@@ -110,50 +175,6 @@ script = ExtResource("3_tlwt5")
 enemy_types = Array[PackedScene]([ExtResource("3_aqk2v")])
 
 [node name="Sun" parent="." unique_id=876680902 instance=ExtResource("4_aqk2v")]
-
-[node name="EnergyBar" type="Control" parent="." unique_id=1795019983]
-light_mask = 2
-visibility_layer = 2
-layout_mode = 3
-anchors_preset = 0
-offset_left = 262.0
-offset_top = -160.0
-offset_right = 302.0
-offset_bottom = -120.0
-
-[node name="BG" type="ColorRect" parent="EnergyBar" unique_id=1631580154]
-light_mask = 2
-layout_mode = 0
-offset_right = 24.0
-offset_bottom = 317.0
-
-[node name="Bar" type="ColorRect" parent="EnergyBar" unique_id=1800226267]
-light_mask = 2
-layout_mode = 0
-offset_left = 23.0
-offset_top = 316.0
-offset_right = 45.365112
-offset_bottom = 631.0
-rotation = -3.1415927
-color = Color(0.95562464, 0.7876952, 0, 1)
-script = ExtResource("1_036b0")
-
-[node name="Death" type="TextureRect" parent="." unique_id=142952948]
-modulate = Color(1, 1, 1, 0)
-light_mask = 4
-offset_left = -301.0
-offset_top = -41.0
-offset_right = 309.0
-offset_bottom = 45.0
-texture = ExtResource("6_dwbse")
-
-[node name="DeathOverlay" type="ColorRect" parent="." unique_id=837360246]
-modulate = Color(1, 1, 1, 0)
-offset_left = -300.0
-offset_top = -175.0
-offset_right = 325.0
-offset_bottom = 192.0
-color = Color(0, 0, 0, 1)
 
 [node name="DeathSFX" type="AudioStreamPlayer" parent="." unique_id=351282972]
 stream = SubResource("AudioStreamRandomizer_306tr")
