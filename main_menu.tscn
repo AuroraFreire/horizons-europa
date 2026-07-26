@@ -1,0 +1,300 @@
+[gd_scene format=3 uid="uid://bmfsjx6uxpphe"]
+
+[ext_resource type="Script" uid="uid://bn8ba1q1tvvfm" path="res://main_menu.gd" id="1_7vrkn"]
+[ext_resource type="VideoStream" uid="uid://clluvmujmse3q" path="res://mainmenu-anim_itgmneHV.ogv" id="2_fu7sn"]
+[ext_resource type="FontFile" uid="uid://bommj3adrys8u" path="res://Naluka.ttf" id="3_fu7sn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.64, 0.224, 0.224, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 1
+shadow_offset = Vector2(3, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
+bg_color = Color(0.42948678, 0.13492641, 0.13590989, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 1
+shadow_offset = Vector2(3, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fu7sn"]
+bg_color = Color(0.42948678, 0.13492641, 0.13590989, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 1
+shadow_offset = Vector2(3, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ffxw"]
+bg_color = Color(0.64, 0.224, 0.224, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 1
+shadow_offset = Vector2(3, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qtwp"]
+bg_color = Color(0.42948678, 0.13492641, 0.13590989, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 1
+shadow_offset = Vector2(3, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
+bg_color = Color(0.42948678, 0.13492641, 0.13590989, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 1
+shadow_offset = Vector2(3, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(0.42948678, 0.13492641, 0.13590989, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 1
+shadow_offset = Vector2(3, 6)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
+bg_color = Color(0.42948678, 0.13492641, 0.13590989, 1)
+corner_radius_top_left = 30
+corner_radius_bottom_right = 30
+shadow_color = Color(0, 0, 0, 0.19607843)
+shadow_size = 1
+shadow_offset = Vector2(3, 6)
+
+[sub_resource type="Animation" id="Animation_7vrkn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../exit:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(700, 524)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../options:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(658, 420)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../play:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(619, 314)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../RichTextLabel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-685, 111)]
+}
+
+[sub_resource type="Animation" id="Animation_fu7sn"]
+resource_name = "button_entrance"
+length = 0.6869
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../exit:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(700, 524), Vector2(840, 524)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../options:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(658, 420), Vector2(840, 420)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../play:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.13694775, 0.6863129),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(619, 314), Vector2(839, 315)]
+}
+
+[sub_resource type="Animation" id="Animation_glbon"]
+resource_name = "title_bouce"
+
+[sub_resource type="Animation" id="Animation_jix8l"]
+resource_name = "title_entrance"
+length = 0.6
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jix8l"]
+_data = {
+&"RESET": SubResource("Animation_7vrkn"),
+&"button_entrance": SubResource("Animation_fu7sn"),
+&"title_bouce": SubResource("Animation_glbon"),
+&"title_entrance": SubResource("Animation_jix8l")
+}
+
+[sub_resource type="Animation" id="Animation_nlkkf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-685, 111)]
+}
+
+[sub_resource type="Animation" id="Animation_qe12f"]
+resource_name = "title_entrance"
+length = 1.4
+capture_included = true
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../RichTextLabel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.6, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [Vector2(-685, 111), Vector2(76, 111)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8qtwp"]
+_data = {
+&"RESET": SubResource("Animation_nlkkf"),
+&"title_entrance": SubResource("Animation_qe12f")
+}
+
+[node name="Control" type="Control" unique_id=1738751077]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7vrkn")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1655515133]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("2_fu7sn")
+loop = true
+
+[node name="bg" type="Panel" parent="." unique_id=525912778]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+
+[node name="alsobg" type="Panel" parent="." unique_id=1019731629]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+
+[node name="play" type="Button" parent="." unique_id=1227559242]
+layout_mode = 0
+offset_left = 619.0
+offset_top = 314.0
+offset_right = 878.00006
+offset_bottom = 401.0
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qe12f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fu7sn")
+text = "Play"
+
+[node name="options" type="Button" parent="." unique_id=1780141514]
+layout_mode = 0
+offset_left = 658.0
+offset_top = 420.0
+offset_right = 917.0005
+offset_bottom = 507.0
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ffxw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8qtwp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_glbon")
+text = "Options"
+
+[node name="exit" type="Button" parent="." unique_id=1097124825]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 524.0
+offset_right = 958.9998
+offset_bottom = 611.0
+theme_override_font_sizes/font_size = 55
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ffxw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nlkkf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jix8l")
+text = "Exit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1325494551]
+root_node = NodePath("../VideoStreamPlayer")
+libraries/ = SubResource("AnimationLibrary_jix8l")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=779702782]
+layout_mode = 0
+offset_left = -685.0
+offset_top = 111.0
+offset_right = -26.0
+offset_bottom = 276.0
+theme_override_colors/default_color = Color(0.74, 0.16280003, 0.16280003, 1)
+theme_override_colors/font_outline_color = Color(0.75431997, 0.84, 0.2688, 1)
+theme_override_fonts/normal_font = ExtResource("3_fu7sn")
+theme_override_font_sizes/normal_font_size = 116
+bbcode_enabled = true
+text = "[wave]Solar Runners[wave]"
+fit_content = true
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=568224830]
+root_node = NodePath("../exit")
+libraries/ = SubResource("AnimationLibrary_8qtwp")
+
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

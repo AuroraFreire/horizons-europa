@@ -9,7 +9,7 @@ script = ExtResource("1_iveel")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1298360373]
 light_mask = 4
-position = Vector2(-3, -131)
+position = Vector2(-3.0000002, -145)
 scale = Vector2(0.3151645, 0.3241692)
 texture = ExtResource("2_enfo0")
 
