@@ -13,6 +13,9 @@ position = Vector2(-3, -131)
 scale = Vector2(0.3151645, 0.3241692)
 texture = ExtResource("2_enfo0")
 
+[node name="PointLight2D" type="PointLight2D" parent="Icon" unique_id=1366077356]
+texture = ExtResource("2_enfo0")
+
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=969829076]
 scale = Vector2(0.27, 0.365)
 color = Color(0.9028434, 0.88290036, 0.7221146, 1)

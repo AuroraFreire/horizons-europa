@@ -5,9 +5,11 @@ extends Node2D
 var lane_index = 0
 var position_offset: Vector2
 var target_pos
+var restart := false
 @onready var sun = get_node("../Sun")
 @onready var death_screen = get_node("../Death")
 @onready var death_overlay = get_node("../DeathOverlay")
+@onready var death_sound = get_node("../DeathSFX")
 
 var died = false
 var die_counter = 0.0
@@ -17,10 +19,15 @@ func _ready():
 	target_pos = position.x
 
 func die():
+	if died:
+		return
 	died = true
+	death_sound.play()
 
 func _process(delta: float) -> void:
 	var can_move = abs(position.x-target_pos) < 25
+	if sun.counter <= 0:
+		died = true
 	if died:
 		can_move = false
 		die_counter += delta
@@ -29,6 +36,11 @@ func _process(delta: float) -> void:
 		elif die_counter <= 0.3+1.0:
 			death_overlay.modulate.a = (die_counter-0.3)/1.0
 			print(death_overlay.modulate.a)
+		else:
+			if not restart:
+				restart = true
+			await get_tree().create_timer(0.9).timeout
+			get_tree().change_scene_to_file("res://world.tscn")
 	
 	if can_move:
 		if Input.is_action_pressed("right"):
