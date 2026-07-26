@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var panel = $Panel
+@onready var panel = $CanvasLayer/Panel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

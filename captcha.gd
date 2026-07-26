@@ -7,8 +7,8 @@ signal passed
 @export_range(0.0, 1.0) var instant_pass_chance := 0.3
 
 const tile_sets = {
-	"ravens": ["res://raven.png", "res://raven_down.png"],
-	"owls": ["res://owl.png"],
+	"ravens": ["res://raven-002.png"],
+	"owls": ["res://owl-004-frame0.png"],
 	"suns": ["res://sun.png", "res://sun2.png", "res://sun3.png"],
 }
 
