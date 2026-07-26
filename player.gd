@@ -10,6 +10,7 @@ var restart := false
 @onready var death_screen = get_node("../Death")
 @onready var death_overlay = get_node("../DeathOverlay")
 @onready var death_sound = get_node("../DeathSFX")
+@onready var captcha = get_node("../Captcha")
 
 var died = false
 var die_counter = 0.0
@@ -42,12 +43,16 @@ func _process(delta: float) -> void:
 			await get_tree().create_timer(0.9).timeout
 			get_tree().change_scene_to_file("res://world.tscn")
 	
+	var prev_lane = lane_index
 	if can_move:
 		if Input.is_action_pressed("right"):
 			lane_index += 1
 		if Input.is_action_pressed("left"):
 			lane_index -= 1
 	lane_index = clamp(lane_index,0,lanes_amount-1)
+	#changed lane = 1 in 10 captcha roll. mashing into the wall doesnt count
+	if lane_index != prev_lane and randi() % 10 == 0:
+		captcha.trigger()
 		
 	target_pos = lane_index*lanes_distance+position_offset.x
 	
