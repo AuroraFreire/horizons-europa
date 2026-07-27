@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var sun_counter = get_node("../Player")
 @onready var player = get_node("../Player")
 var spawn_timer = 0.0
 
@@ -14,7 +15,16 @@ func regenerate_spawn_positions():
 func _process(delta: float) -> void:
 	spawn_timer -= delta
 	if spawn_timer <= 0.0:
-		spawn_timer = 1.5
+		if player.score <= 9.8:
+			spawn_timer = 1.5
+		elif player.score >= 10 and player.score <= 29.8:
+			spawn_timer = 1.0
+		elif player.score >= 30 and player.score <= 59.8:
+			spawn_timer = 0.75
+		elif player.score >= 60 and player.score >= 150:
+			spawn_timer = 0.35
+		else:
+			spawn_timer = 0.2
 		var node = enemy_types[randi_range(0,len(enemy_types)-1)].instantiate()
 		if len(potential_spawn_positions) == 0:
 			regenerate_spawn_positions()
